@@ -1,0 +1,143 @@
+<%- contentFor('body') %>
+
+
+<% if (alerts.success) { %>
+
+	  <% alerts.success.forEach(function(success) { %>
+			<div class="alert alert-success" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    	<span aria-hidden="true">&times;</span>
+		  	</button>
+			  <h4 class="alert-heading"><%- success.alertTitle %></h4>
+			  <p>
+			  	<%- success.alertBody %>
+			  </p>
+			</div>
+
+	  <% }); %>
+
+<% } %>
+
+<% if (alerts.error) { %>
+
+	<div class="alert alert-danger" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	  	<span aria-hidden="true">&times;</span>
+		</button>
+	  <% alerts.error.forEach(function(error) { %>
+	      <li><%= error %></li>
+	  <% }); %>
+	</div>
+
+<% } %>
+
+<p>
+	Esta é uma ferramenta/framework que reúne varios módulos criados para <a href="https://nodejs.org/en/">NodeJs</a>, este framework possui o intuito de fornecer uma estrutura padronizada, usando designer pattern e as melhores práticas do javascript para que facilite o desenvolvimento de aplicações node.js.
+</p>
+
+<p>
+	<b>Aqui usaremos os módulos:</b>
+</p>
+
+<ul>
+	<li>
+		<h5>Express (principal):</h5>
+		<p class="text-muted">
+			O express será usado para utilizar mecânismos de view engine, apontamento de rotas, 
+			definição do server nodejs e etc... <br />
+
+		</p>
+		<nav class="nav mb-3">
+		  <a class="nav-link" href="http://expressjs.com/pt-br/" target="blank">
+		  ExpressJs
+			</a>
+		</nav>
+	</li>
+	<li>
+		<h5>Consign:</h5>
+		<p class="text-muted">
+			O consign é um módulo usado sisplemente para fazer autoload, em folders. <br />
+			<b>Por exemplo:</b> <br />
+			Você poderá automaticamente fazer require() de todos arquivos js, dentro de uma determinada pasta. <br />
+
+		</p>
+		<nav class="nav mb-3">
+			<li class="nav-item">
+		  	<a class="nav-link" href="https://github.com/jarradseers/consign" target="blank">Módulo Consign</a>
+			</li>
+		</nav>
+	</li>
+	<li>
+		<h5>Mongoose:</h5>
+		<p class="text-muted">
+			Mongoose é um módulo criado com intuito de organizar "Models" baseados em <a href="https://www.mongodb.com">MongoDB</a>, eles gereciam Schemas que disponibilizam todos os meios de manipular e consultar Collections do MongoDB.<br />
+		</p>
+		<nav class="nav mb-3">
+			<li class="nav-item">
+		  	<a class="nav-link" href="http://mongoosejs.com">MongooseJS</a>
+			</li>
+		</nav>
+	</li>
+	<li>
+		<h5>EJS e Express-ejs-layouts:</h5>
+		<p class="text-muted">
+			O ejs é um módulo cujo intuito é facilitar o envio de informações do controller para a view, ele também é responsável por estetizar o código html, para que assim você tenha um código html legível.<br />
+			O Express-ejs-layouts, serve pra emendar o ejs para que ele suporte um sistema de layouts nas views. <br />
+			Os layouts são por exemplo a estrutura do site (header,footer,scripts,style,html), são todas as tags que são estaticas, nele você poderá indicar campos de conteúdo dinamicos e em arquivos ejs você poderá indicar esse conteúdo que estará dentro de um layout especifico. 
+		</p>
+		<nav class="nav mb-3">
+			<li class="nav-item">
+		 	 <a class="nav-link" href="#">EJS</a>
+			</li>
+			<li class="nav-item">
+		  	<a class="nav-link" href="#">Express-ejs-layouts</a>
+		  </li>
+		</nav>
+	</li>
+
+	<li>
+		<h5>Sequelize</h5>
+		<p class="text-muted">
+				O sequelize é um módulo de criação e manipulação de models, sendo que ao contrario do mongoose que trata exclusivamente do mongoDB, o sequelize manipula as plataformas de banco de dado mysql, sqlite, postgres e mssql.
+		</p>
+
+		<nav class="nav mb-3">
+			<li class="nav-item">
+		 	 <a class="nav-link" href="http://docs.sequelizejs.com" target="blank">Sequelize</a>
+			</li>
+
+		</nav
+
+	</li>
+
+	<li>
+		<h5>Outros módulos</h5>
+		<nav class="nav mb-3">
+			<li class="nav-item">
+		 	 <a class="nav-link" href="#">Body-parse</a>
+			</li>
+			<li class="nav-item">
+		  	<a class="nav-link" href="#">Consign</a>
+		  </li>
+			<li class="nav-item">
+		  	<a class="nav-link" href="#">Express Validation</a>
+		  </li>
+			<li class="nav-item">
+		  	<a class="nav-link" href="#">Express Session</a>
+		  </li>
+			<li class="nav-item">
+		  	<a class="nav-link" href="#">Express-ejs-layouts</a>
+		  </li>
+			<li class="nav-item">
+		  	<a class="nav-link" href="#">Path</a>
+		  </li>
+			<li class="nav-item">
+		  	<a class="nav-link" href="#">Favicon Serve</a>
+		  </li>
+			<li class="nav-item">
+		  	<a class="nav-link" href="https://nodemailer.com/about/">NodeMailer</a>
+		  </li>
+		</nav>
+	</li>
+
+</ul>

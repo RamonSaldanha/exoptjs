@@ -1,0 +1,174 @@
+<%- contentFor('body') %>
+
+<div class="row">
+
+	<div class="col-md-2 ">
+		<% include ./parts/links %>
+
+
+	</div>
+
+	<div class="col-md-10">
+
+		<div class="row">
+
+	    <div class="card p-4 col-md-9">
+
+
+	      <div class="card-body" style="position: relative;">
+
+	      	<h4 class="card-title" id="controllers"># Controller</h4>
+
+	      	<p class="card-text">
+	        	"É o responsável por receber todas as requisições do usuário. Seus métodos chamados actions são responsáveis por uma página, controlando qual model usar e qual view será mostrado ao usuário". O site <a href="https://tableless.com.br/mvc-afinal-e-o-que/" target="blank">tableless</a> define de forma coerente o que é um controller em uma arquitetura de software. <br />
+	        	Neste artigo, iremos compreender e implementar controllers na nossa aplicação NodeJS.
+	        </p>
+
+
+
+
+
+	        <h4 class="card-title mt-5" id="defining_controllers"># Defining controllers</h4>
+
+	        <p class="card-text">
+
+	        	A pasta responsável por armazenar os controllers, fica na raíz do projeto <span class="bg-secondary text-light">./controllers</span>.	Nesta pasta, você pode criar novos arquivos de controller, seguindo o padrão do código a seguir.
+		    		<p class="text-muted">
+		    			Cabe ressaltar que o nome do controller deverá ser indicado no nome do arquivo, neste exemplo iremos batiza-lo de HomeController, contudo também é possível chama-lo por exemplo de ContactController.js.
+		    		</p>
+	        	<p class="font-weight-bold m-0">
+	        		controllers/HomeController.js:
+	        	</p>
+
+	        	<pre><code class="javascript hljs">
+module.exports = function(app) {
+
+	this.indexView = function(req, res) {
+
+		var alerts = {
+			success: [
+				{
+					alertTitle: 'Teste realizado com sucesso',
+					alertBody: 'As variaveis estão sendo transmitida entre o controller e as views',
+				},
+			],
+		};
+
+		res.render("index", {
+			layout: 'layouts/layout',
+			alerts: alerts
+		});
+
+	}
+
+
+	return this;
+
+}
+						</code></pre>
+					</p>
+
+
+
+
+
+					<h4 class="card-title mt-5" id="call_controllers"># Call controllers</h4>
+	        	
+	        <p class="card-text">
+	        	Com o controller criado na pasta <span class="bg-secondary text-light">./controllers</span>, podemos agora chama-lo nas rotas, da seguinte forma:
+	        	<p class="font-weight-bold m-0">
+							routes/index.js:
+	        	</p>
+
+	        	<pre><code class="javascript hljs">
+module.exports = function(app){
+	
+	app.get('/', app.controllers.HomeController.indexView);
+
+}
+						</code></pre>
+
+	        </p>
+
+
+
+
+					<h4 class="card-title mt-5"># Using models in controllers</h4>
+	        	
+	        <p class="card-text" id="using_model_controller">
+	        	
+	        	Os models são armazenados na pasta <span class="bg-secondary text-white">./models</span>. Para incluir um model no seu controller a chamada é através de "app.models.NomeModel", similiar ao que se faz para incluir um controller em uma route. As querys são específicas para o tipo de banco de dados que você utilizará, como o MongoDB ou MySql por exemplo.
+	        	Segue o código de como você implementará está conexão entre controller e model.
+	        	<p class="text-muted">
+	        		Ressaltando que, para o model funcionar corretamente você precisa primeiro configurar o banco de dados e as configurações de conexão.	
+	        	</p>
+
+	        	<p class="font-weight-bold m-0">
+							routes/UsersController.js:
+	        	</p>
+
+	        	<pre><code class="javascript hljs">
+module.exports = function(app){
+	
+	var User = app.models.User;
+
+	this.usersView = function(req, res){
+
+		User.query.find(function (err, users) {
+
+		  if (err) return console.error(err);
+
+		  res.render('modelview', {
+		  	layout: 'layouts/layout',
+		  	users: users
+		  });
+
+		});
+	}
+
+	return this;
+
+}
+						</code></pre>
+
+
+
+	        	<p class="font-weight-bold m-0 mt-3">
+							view/modelview.ejs:
+	        	</p>
+
+	        	<pre><code class="php hljs">
+<%% users.forEach(function(user){ %%>
+	&lt;li&gt; <%%= user.name; %%> &lt;&frasl;li&gt;
+<%% }); %%>
+						</code></pre>
+
+	        </p>
+
+	      </div>
+	    </div>
+
+	    <div class="col-md-3">
+		    <div class="nav nav-pills" id="anchornav">
+		    	<li class="nav-item">
+			      <a class="nav-link" href="#controllers"># Controllers</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#defining_controllers"># Defining controllers</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#call_controllers"># Call controllers</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#using_model_controller"># Using models in controllers</a>
+			    </li>
+				</div>
+	    </div>
+
+		</div>
+
+	</div>
+
+
+</div>
+

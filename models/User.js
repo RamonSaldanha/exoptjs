@@ -2,7 +2,7 @@ module.exports = function(app){
 
 	var mongoose = require('mongoose'),
 			Schema = mongoose.Schema,
-			conn = new app.src.mongodb.mongoConn;
+			conn = new app.bin.mongodb.mongoConn;
 
 	this.Schema = new Schema ({
 		nome: String,

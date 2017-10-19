@@ -30,7 +30,7 @@ module.exports = function(app){
 		const mongoose = require('mongoose');
 
 		mongoose.Promise = global.Promise;
-		mongoose.connect(app.src.config.db_type.mongodb.mongo_uri , app.src.config.db_type.mongodb.mongo_options);
+		mongoose.connect(app.bin.config.db_type.mongodb.mongo_uri , app.bin.config.db_type.mongodb.mongo_options);
 
 		return mongoose.connection;
 

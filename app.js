@@ -46,8 +46,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 	autoload em folders
 */
 consign()
-	.include('./src/config.json')
-	.then('./src/mongodb.js')
+	.include('./bin/config.json')
+	.then('./bin/mongodb.js')
   .then('./models')
   .then('./controllers')
   .then('./routes')

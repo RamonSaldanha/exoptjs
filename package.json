@@ -1,19 +1,27 @@
 {
-  "name": "exopt",
-  "version": "1.0.0",
-  "description": "Express Optimized",
+  "name": "exoptjs",
+  "version": "1.0.4",
+  "description": "A express compiled framework",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ramon <ramonsaldanhaa@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamonSaldanha/exoptjs.git"
+  },
+  "author": "ramon saldanha <ramonsaldanhaa@gmail.com>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamonSaldanha/exoptjs/issues"
+  },
+  "homepage": "https://github.com/RamonSaldanha/exoptjs#readme",
   "dependencies": {
     "consign": "^0.1.6",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-ejs-layouts": "^2.3.1",
-    "mongoose": "^4.12.2",
+    "mongoose": "^4.12.3",
     "path": "^0.12.7"
   }
 }

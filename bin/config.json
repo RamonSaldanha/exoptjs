@@ -3,7 +3,7 @@
 	"db_type": {
 		
 		"mongodb": {
-			"mongo_uri": "mongodb://127.0.0.1:27017/novo",
+			"mongo_uri": "mongodb://127.0.0.1:27017/example",
 			"mongo_options": { "useMongoClient": true }
 		}
 

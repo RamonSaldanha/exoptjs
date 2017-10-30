@@ -11,7 +11,6 @@ const path = require('path'),
 
 /*
 	fim requires
-	teste github atom
 */
 
 var app = express();

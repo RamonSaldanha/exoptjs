@@ -1,4 +1,4 @@
-/* 
+/*
 	requires packages
 	"express": responsável por rotas, server, view engine
 	"consign": responsável pelo autoload de arquivos
@@ -9,8 +9,9 @@ const path = require('path'),
 		http = require('http'),
 		ejsLayouts = require('express-ejs-layouts');
 
-/* 
-	fim requires 
+/*
+	fim requires
+	teste github atom
 */
 
 var app = express();
@@ -26,11 +27,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('layout extractScripts', true);
 app.set('layout extractStyles', true);
 
-/* 
+/*
 	habilitar o uso dos layouts ejs
 	para utilizar um ejs layout
 	no controller ou rota res.render("index", {layout: 'caminhodolayout'})
-	no caminho, você poderá definir "yields", usando 
+	no caminho, você poderá definir "yields", usando
   <%- defineContent('content') %>
 */
 app.use(ejsLayouts);

@@ -11,5 +11,7 @@ module.exports = function(app){
 	this.query = mongoose.model('users', this.Schema);
 
 	return this;
+	
+	mongoose.connection.close();
 
 }

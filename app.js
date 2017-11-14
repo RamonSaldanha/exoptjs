@@ -7,6 +7,7 @@ const path = require('path'),
 		express = require('express'),
 		consign = require('consign'),
 		http = require('http'),
+		bodyParser = require('body-parser'),
 		ejsLayouts = require('express-ejs-layouts');
 
 /*
@@ -41,6 +42,14 @@ app.use(ejsLayouts);
 	qual é a pasta raiz
 */
 app.use(express.static(path.join(__dirname, 'public')));
+
+/* 
+	body-parser
+	utilizado pra transferência de dados em requisições HTTP
+	no metodo post, em forms
+*/
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 /*
 	autoload em folders

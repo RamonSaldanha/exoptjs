@@ -60,8 +60,10 @@ consign()
   .then('./models')
   .then('./controllers')
   .then('./routes')
-  .into(app);
+		.into(app);
+		
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, function(){
-	console.log("Servidor Online na porta 3000");
+app.listen(PORT, function(){
+	console.log("Servidor Online na porta:" + PORT);
 });

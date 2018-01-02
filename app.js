@@ -35,6 +35,7 @@ app.set('layout extractStyles', true);
   <%- defineContent('content') %>
 */
 app.use(ejsLayouts);
+
 /*
 	esta função serve para determinar o caminho onde o EJS vai buscar os arquivos
 	por exemplo, se você colocar um elemnto html <img src="img/teste.jpg", ele buscará
@@ -51,6 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
 /*
 	autoload em folders
 */
@@ -60,7 +62,7 @@ consign()
   .then('./models')
   .then('./controllers')
   .then('./routes')
-		.into(app);
+	.into(app);
 		
 const PORT = process.env.PORT || 3000;
 

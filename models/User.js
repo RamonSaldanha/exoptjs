@@ -1,17 +1,17 @@
-module.exports = function(app){
+// module.exports = function(app){
 
-	var mongoose = require('mongoose'),
-			Schema = mongoose.Schema,
-			conn = new app.bin.mongodb.mongoConn;
+// 	var mongoose = require('mongoose'),
+// 			Schema = mongoose.Schema,
+// 			conn = new app.bin.mongodb.mongoConn;
 
-	this.Schema = new Schema ({
-		nome: String,
-	});
+// 	this.Schema = new Schema ({
+// 		nome: String,
+// 	});
 
-	this.query = mongoose.model('users', this.Schema);
+// 	this.query = mongoose.model('users', this.Schema);
 
-	return this;
+// 	return this;
 	
-	mongoose.connection.close();
+// 	mongoose.connection.close();
 
-}
+// }

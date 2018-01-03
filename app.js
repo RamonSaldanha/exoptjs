@@ -58,7 +58,11 @@ app.use(bodyParser.json());
 */
 consign()
 	.include('./bin/config.json')
-	.then('./bin/mongodb.js')
+	/*
+	* use lowdb.js ou mongodb.js
+	* de acordo com o banco que você optará por usar
+	*/
+	.then('./bin/mongodb.js') 
   .then('./models')
   .then('./controllers')
   .then('./routes')

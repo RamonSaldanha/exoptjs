@@ -16,7 +16,7 @@ const path = require('path'),
 * shortId serve pra gerar números de id 
 * (usado principalmente no lowdb) 
 */
-const shortId = require('shortid');
+// const shortId = require('shortid'); // usar no controller
 
 /*
 	fim requires

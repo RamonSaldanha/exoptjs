@@ -10,6 +10,14 @@ const path = require('path'),
 		bodyParser = require('body-parser'),
 		ejsLayouts = require('express-ejs-layouts');
 
+// REQUIRES OPCIONAIS
+
+/* 
+* shortId serve pra gerar números de id 
+* (usado principalmente no lowdb) 
+*/
+const shortId = require('shortid');
+
 /*
 	fim requires
 */

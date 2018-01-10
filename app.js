@@ -31,9 +31,12 @@ app.set('views', path.join(__dirname, 'views'));
 	layout extractScript/Style, servem pra indicar
 	que todas as tags styles irão forçadamente aparecer no topo do código
 	e todas as tags scripts irão forçadamente aparecer no rodapé do código
+
+	para indicar onde vai forçar o envio do script e styles, usar no layout ejs
+	<%- script %> <%- style %>
 */
-// app.set('layout extractScripts', true);
-// app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+app.set('layout extractStyles', true);
 
 /*
 	habilitar o uso dos layouts ejs

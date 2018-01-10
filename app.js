@@ -32,8 +32,8 @@ app.set('views', path.join(__dirname, 'views'));
 	que todas as tags styles irão forçadamente aparecer no topo do código
 	e todas as tags scripts irão forçadamente aparecer no rodapé do código
 */
-app.set('layout extractScripts', true);
-app.set('layout extractStyles', true);
+// app.set('layout extractScripts', true);
+// app.set('layout extractStyles', true);
 
 /*
 	habilitar o uso dos layouts ejs
@@ -64,7 +64,7 @@ app.use(bodyParser.json());
 /*
 	autoload em folders
 */
-consign()
+consign(/*{cwd: 'exoptjs'} necessário usar com electron */)
 	.include('./bin/config.json')
 	/*
 	* use lowdb.js ou mongodb.js

@@ -1,5 +1,5 @@
 module.exports = function (app) {
-        
+
   /*
     @param lowDB = function() => require('lowdb') in model
     @param FileSync = function() => require('lowdb/adapters/FileSync') in model
@@ -7,10 +7,13 @@ module.exports = function (app) {
   */
   this.lowConn = function (lowDB, FileSync, modelName) {
 
-    var dbl = lowDB(new FileSync('./bin/database/' + modelName + '.json'));
+    const path = require('path');
+
+    const dbl = lowDB(new FileSync(path.join(__dirname, 'database/') + modelName + '.json'));
+
 
     return dbl;
-    
+
   }
 
   return this;

@@ -60,7 +60,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 	utilizado pra transferência de dados em requisições HTTP
 	no metodo post, em forms
 */
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 

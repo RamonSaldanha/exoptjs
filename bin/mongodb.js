@@ -12,9 +12,6 @@ module.exports = function(app){
 
 	}
 
-	this.mysqlConn = function(){
-
-	}
 
 	return this;
 

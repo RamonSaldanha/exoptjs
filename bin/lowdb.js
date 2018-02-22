@@ -11,7 +11,6 @@ module.exports = function (app) {
 
     const dbl = lowDB(new FileSync(path.join(__dirname, 'database/') + modelName + '.json'));
 
-
     return dbl;
 
   }

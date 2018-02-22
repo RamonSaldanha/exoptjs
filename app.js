@@ -65,15 +65,18 @@ app.use(bodyParser.json());
 
 
 /*
-	autoload em folders
+*	autoload em folders
 */
-consign(/*{cwd: 'exoptjs'} necessário usar com electron */)
+consign(/*{cwd: 'exoptjs'} require to use in electron */)
 	.include('./bin/config.json')
 	/*
-	* use lowdb.js ou mongodb.js
-	* de acordo com o banco que você optará por usar
+	* use lowdb.js or mongodb.js or mysql
+	* according to the database of your choice
+	* model Newsletter for mysql example using sequelize
+	* model Posts for lowdb example
+	* model User for mongodb example using mongoose
 	*/
-	.then('./bin/mongodb.js') 
+	.then('./bin/mysql.js') 
   .then('./models')
   .then('./controllers')
   .then('./routes')
